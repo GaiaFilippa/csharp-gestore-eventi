@@ -19,8 +19,6 @@ Evento nuovoEvento = new Evento("Concerto", "11/12/2002", 200, 3);
 Console.WriteLine(nuovoEvento.ToString());
 */
 
-try
-{
     Console.WriteLine("Inserisci il nome dell'evento: ");
     string titoloUtente = Console.ReadLine();
     Console.WriteLine("Inserisci la data dell'evento (gg/mm/yyyy): ");
@@ -30,9 +28,10 @@ try
     Console.WriteLine("Quanti posti desideri prenotare? ");
     string postiPrenotatiUtente = Console.ReadLine();
 
-    Evento nuovoEvento = new Evento(titoloUtente, dataUtente, 200, 30);
-    Console.WriteLine(nuovoEvento.ToString());
-} catch (Exception e)
-    {
-        Console.WriteLine(e.Message);
-    }
+    int maxCapienzaUtenteNumero = Int32.Parse(maxCapienzaUtente);
+    int postiPrenotatiUtenteNumero = Int32.Parse(postiPrenotatiUtente);
+
+Evento nuovoEvento = new Evento(titoloUtente, dataUtente, maxCapienzaUtenteNumero, postiPrenotatiUtenteNumero);
+Console.WriteLine(nuovoEvento.ToString());
+
+
