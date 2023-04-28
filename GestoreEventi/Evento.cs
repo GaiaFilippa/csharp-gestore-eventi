@@ -90,7 +90,17 @@ namespace GestoreEventi
             }
         }
 
-       
+        public void CancellaPrenotazione(int postiCancellatiUtente)
+        {
+            if (postiPrenotati - postiCancellatiUtente < postiPrenotati && this.data > DateTime.Now)
+            {
+                postiPrenotati -= postiCancellatiUtente;
+            }
+            else
+            {
+                throw new ArgumentException("Impossibile cancellare la prenotazione!");
+            }
+        }
 
         public override string ToString()
         {
