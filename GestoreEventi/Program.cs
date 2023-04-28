@@ -15,6 +15,24 @@ che afferiscono ad serie di Conferenze)
 using GestoreEventi;
 
 /*
-Evento nuovoEvento = new Evento("Concerto", 11/12/2002, 200, 3);
+Evento nuovoEvento = new Evento("Concerto", "11/12/2002", 200, 3);
 Console.WriteLine(nuovoEvento.ToString());
 */
+
+try
+{
+    Console.WriteLine("Inserisci il nome dell'evento: ");
+    string titoloUtente = Console.ReadLine();
+    Console.WriteLine("Inserisci la data dell'evento (gg/mm/yyyy): ");
+    string dataUtente = Console.ReadLine();
+    Console.WriteLine("Inserisci il numero di posti totali: ");
+    string maxCapienzaUtente = Console.ReadLine();
+    Console.WriteLine("Quanti posti desideri prenotare? ");
+    string postiPrenotatiUtente = Console.ReadLine();
+
+    Evento nuovoEvento = new Evento(titoloUtente, dataUtente, 200, 30);
+    Console.WriteLine(nuovoEvento.ToString());
+} catch (Exception e)
+    {
+        Console.WriteLine(e.Message);
+    }
