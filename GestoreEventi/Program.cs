@@ -40,12 +40,15 @@ bool vuoiCancellarePostiPrenotati = true;
 
 while (vuoiCancellarePostiPrenotati)
 {
-    Console.WriteLine("Vuoi disdire dei posti prenotati?");
+    Console.WriteLine("Vuoi disdire dei posti prenotati(si/no)?");
 
-    string answer = Console.ReadLine();
-    if (answer == "Yes")
+    string rispostaUtente = Console.ReadLine();
+    if (rispostaUtente == "si")
     {
-        Console.WriteLine();
+        Console.WriteLine("Inserisci il numero di posti da disdire: ");
+        string postiDisdetti = Console.ReadLine();
+        int postiDisdettiOra = Int32.Parse(postiDisdetti);
+        Console.WriteLine($"Posti prenotati: {nuovoEvento.postiPrenotati}");
     }
     else
     {
