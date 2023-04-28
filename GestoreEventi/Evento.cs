@@ -10,14 +10,14 @@ namespace GestoreEventi
     {
         // Attributi
         public string titolo;
-        public int data;
+        public string data;
         public int maxCapienza;
         public int postiPrenotati;
 
 
 
         // Costruttore
-        public Evento(string titolo, int data, int maxCapienza, int postiPrenotati = 0)
+        public Evento(string titolo, string data, int maxCapienza, int postiPrenotati = 0)
         {
 
             this.titolo = titolo;
@@ -33,9 +33,9 @@ namespace GestoreEventi
             return this.titolo;
         }
 
-        public int GetData()
+        public string GetData()
         {
-
+            DateTime data = DateTime.Parse(this.data);
             return this.data;
         }
 
