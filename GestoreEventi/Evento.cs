@@ -59,7 +59,14 @@ namespace GestoreEventi
             }
         }
 
-
+        public void SetMaxCapienza()
+        {
+            if (maxCapienza < 0)
+            {
+                string exceptionMessage = "Non puoi inserire un numero negativo!";
+                throw new ArgumentException(exceptionMessage);
+            }
+        }
 
         // Methods
         public void PrenotaPosti(int maxCapienza)
@@ -70,6 +77,12 @@ namespace GestoreEventi
                 throw new ArgumentException(exceptionMessage);
             }
 
+        }
+
+        public int DisdiciPosti(int postiprenotati)
+        {
+            postiPrenotati -= postiPrenotati;
+            return postiPrenotati;
         }
 
         public override string ToString()
