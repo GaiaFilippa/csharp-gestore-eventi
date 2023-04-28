@@ -10,10 +10,9 @@ namespace GestoreEventi
     {
         // Attributi
         public string titolo;
-        public string data;
+        public DateTime data;
         public int maxCapienza;
         public int postiPrenotati;
-
 
 
         // Costruttore
@@ -21,7 +20,7 @@ namespace GestoreEventi
         {
 
             this.titolo = titolo;
-            this.data = data;
+            this.data = DateTime.Parse(data);
             this.maxCapienza = maxCapienza;
             this.postiPrenotati = postiPrenotati;
         }
@@ -35,8 +34,8 @@ namespace GestoreEventi
 
         public string GetData()
         {
-            DateTime data = DateTime.Parse(this.data);
-            return this.data;
+            
+            return this.data.ToString("dd/MM/yyyy");
         }
 
         public int GetMaxCapienza()
@@ -68,6 +67,15 @@ namespace GestoreEventi
             }
         }
 
+        public void SetData()
+        {
+            if (this.data < DateTime.Now)
+            {
+                string exceptionMessage = "La data inserita è già passata!";
+                throw new ArgumentException(exceptionMessage);
+            }
+        }
+
         // Methods
         public void PrenotaPosti(int maxCapienza)
         {
@@ -75,15 +83,14 @@ namespace GestoreEventi
             {
                 string exceptionMessage = "Hai superato i posti disponibili!";
                 throw new ArgumentException(exceptionMessage);
+            } else if (this.data < DateTime.Now)
+            {
+                string exceptionMessage = "La data inserita è già passata!";
+                throw new ArgumentException(exceptionMessage);
             }
-
         }
 
-        public int DisdiciPosti(int postiprenotati)
-        {
-            postiPrenotati -= postiPrenotati;
-            return postiPrenotati;
-        }
+       
 
         public override string ToString()
         {
