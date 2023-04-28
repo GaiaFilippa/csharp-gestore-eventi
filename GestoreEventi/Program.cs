@@ -35,3 +35,20 @@ Evento nuovoEvento = new Evento(titoloUtente, dataUtente, maxCapienzaUtenteNumer
 Console.WriteLine(nuovoEvento.ToString());
 
 
+bool vuoiCancellarePostiPrenotati = true;
+
+
+while (vuoiCancellarePostiPrenotati)
+{
+    Console.WriteLine("Vuoi disdire dei posti prenotati?");
+
+    string answer = Console.ReadLine();
+    if (answer == "Yes")
+    {
+        Console.WriteLine();
+    }
+    else
+    {
+        vuoiCancellarePostiPrenotati = false;
+    }
+}
