@@ -12,3 +12,7 @@ che afferiscono ad serie di Conferenze)
 
 
 
+using GestoreEventi;
+
+Evento nuovoEvento = new Evento("Concerto", 11/12/2002, 200, 3);
+Console.WriteLine(nuovoEvento.ToString());
